@@ -3,11 +3,14 @@ import mongoose from "mongoose"
 import bodyParser from "body-parser"
 import dotenv from "dotenv"
 import route from "./routes/userRoute.js"
-
+import bookRoutes from "./routes/booksRoute.js"
+import reviewRoutes from "./routes/reviewsRoute.js"
+import swaggerRouter  from './helpers/swagger.js'
+import cors from 'cors'
 
 
 const app = express();
-
+app.use(cors())
 app.use(bodyParser.json());
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -23,3 +26,6 @@ mongoose.connect(MONGOURL)
 }).catch((error)=>console.log(error))
 
 app.use("/api/user", route)
+app.use('/api/books', bookRoutes);
+app.use("/api", reviewRoutes);
+app.use('/', swaggerRouter)

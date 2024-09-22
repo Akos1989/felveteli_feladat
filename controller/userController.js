@@ -27,18 +27,6 @@ res.status(201).json({
 })
 
 }
-/*try {
-    const userData = new User(req.body)
-    const { email } = userData;
-    const userExists = await User.findOne({email})
-    if(userExists){
-        return res.status(400).json({message: "User exists"})
-    }
-    const savedUser = await userData.save()
-    res.status(200).json(savedUser)
-} catch (error) {
-    res.status(500).json({error: "Server error"})
-}*/
 
 
 //login user
@@ -67,7 +55,16 @@ export const login = async(req, res)=>{
 //verified user
 
 export const verified = async(req, res)=>{
-    res.status(200).send('authenticated page');
+    try {
+        const verifiedUser = await User.find()
+        if(!verified){
+            return res.status(404).json({ message: "User not found"})
+        }
+        res.status(200).json(verifiedUser)
+    } catch (error) {
+        res.status(500).json({error: "Server error"})
+    }
+   
 }
 
 

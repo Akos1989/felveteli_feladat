@@ -1,18 +1,27 @@
 import mongoose from "mongoose";
 
-const booksSchema = new mongoose.Schemna({
-    title:{
-        type:String,
+const booksSchema = new mongoose.Schema({
+    title: {
+        type: String,
         required: true
-        },
-    author:{
-        tpye:String,
-        required:true
     },
-    published:{
-        type:Date,
-        required:true
+    author: {
+        type: String,
+        required: true
+    },
+    published: {
+        type: Date,
+        required: true
+    },
+    reviews: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Review"
+    }],
+    averageRating: {
+        type: Number,
+        default: 0,
     }
-})
 
-export default mongoose.model("books", userSchema)
+});
+
+export default mongoose.model("Book", booksSchema);
