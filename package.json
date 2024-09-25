@@ -1,13 +1,13 @@
 {
   "name": "felveteli_feladat",
   "version": "1.0.0",
-  "description": "",
+  "description": "Users and reviews api",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "devStart": "nodemon server.js"
   },
-  "author": "",
+  "author": "Akos Badar",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",

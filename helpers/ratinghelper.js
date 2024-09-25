@@ -8,7 +8,6 @@ export const updateAverageRating = async (bookId) => {
         if (!book) {
             throw new Error("Book not found");
         }
-
         
         const totalReviews = book.reviews.length;
 

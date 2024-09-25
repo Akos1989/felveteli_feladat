@@ -36,7 +36,10 @@ export const getAllBooks = async(req, res)=>{
         res.status(200).json(allBooks)
         console.log(allBooks)
     } catch (error) {
-        res.status(500).json({error: "Server error"})
+        return res.status(500).json({
+            message: "Server error",
+            error: error.message
+        })
     }
 }
 
@@ -52,11 +55,12 @@ export const getBookById = async (req, res) => {
         }
         res.status(200).json(book);
     } catch (error) {
-        console.error("Error", error);
-        res.status(500).json({ error: "Server error" });
-    }
+        return res.status(500).json({
+            message: "Server error",
+            error: error.message
+    })
 };
-
+}
 // modifying a book
  export const updateBookById = async (req, res) => {
     const { id } = req.params; 
@@ -72,8 +76,10 @@ export const getBookById = async (req, res) => {
             book: updatedBook
         });
     } catch (error) {
-        console.error("Error", error);
-        res.status(500).json({ error: "Server error" });
+        return res.status(500).json({
+            message: "Server error",
+            error: error.message
+    })
     }
 };
 
@@ -93,7 +99,9 @@ export const deleteBookById = async (req, res) => {
             book: deletedBook
         });
     } catch (error) {
-        console.error("Error", error);
-        res.status(500).json({ error: "Server error" });
+        return res.status(500).json({
+            message: "Server error",
+            error: error.message
+    })
     }
 };

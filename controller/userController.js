@@ -5,28 +5,28 @@ import bcrypt from 'bcryptjs'
 //register user
 export const create = async (req, res,)=>{
 
-const {name, email, address, password} = req.body
-const hashedPassword = await bcrypt.hash(password, 12)
-const user = await User.create({
-    name,
-    email,
-    address,
-    password: hashedPassword
-})
-const token = jwt.sign(
-    {user_id:user._id},
-    process.env.JWT_SECRET,
-    {
-        expiresIn: "5h",
-      }
-)
-res.status(201).json({
-    status: 'success',
-    token,
-    user
-})
+    const {name, email, address, password} = req.body
+    const hashedPassword = await bcrypt.hash(password, 12)
+    const user = await User.create({
+        name,
+        email,
+        address,
+        password: hashedPassword
+    })
+    const token = jwt.sign(
+        {user_id:user._id},
+        process.env.JWT_SECRET,
+        {
+            expiresIn: "5h",
+        }
+    )
+    res.status(201).json({
+        status: 'success',
+        token,
+        user
+    })
 
-}
+    }
 
 
 //login user
@@ -67,15 +67,12 @@ export const verified = async(req, res)=>{
    
 }
 
-
-
 //get all users
 export const getAll = async (req, res) =>{
     try {
         const users = await User.find()
         if(users.length === 0){
             return res.status(404).json({message: "User not found"})
-
         }
         res.status(200).json(users)
         console.log(users)
