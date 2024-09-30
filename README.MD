@@ -47,23 +47,23 @@ API dokumentációt itt éred el : http://localhost:8000/api-docs
 
 ## Routes
 
-POST	/api/users/register -	Felhasználó regisztráció
-POST	/api/users/login    -	Felhasználó bejelentkezés
-GET	/api/users/:id          -	Felhasználó adatainak lekérése ID alapján
-PUT	/api/users/:id          -	Felhasználó adatainak frissítése ID alapján
-DELETE	/api/users/:id      -	Felhasználó törlése ID alapján
+POST    /api/users/create     -   Felhasználó regisztráció
+POST    /api/users/login      -   Felhasználó bejelentkezés
+GET     /api/users            -   Összes felhasználó lekérése
+PUT     /api/users/:id        -   Felhasználó adatainak frissítése ID alapján
+DELETE  /api/users/:id        -   Felhasználó törlése ID alapján
 
-GET	/api/books              -	Összes könyv lekérése
-POST	/api/books	        -   Új könyv létrehozása
-GET	/api/books/:id	        -   Egy könyv lekérése ID alapján
-PATCH	/api/books/:id	    -   Egy könyv frissítése ID alapján
-DELETE	/api/books/:id	    -   Egy könyv törlése ID alapján
+GET     /api/books            -   Összes könyv lekérése
+POST    /api/books            -   Új könyv létrehozása
+GET     /api/books/:id        -   Egy könyv lekérése ID alapján
+PATCH   /api/books/:id        -   Egy könyv frissítése ID alapján
+DELETE  /api/books/:id        -   Egy könyv törlése ID alapján
 
-GET	/api/reviews	        -   Összes értékelés lekérése
-POST	/api/reviews	    -   Új értékelés létrehozása
-GET	/api/reviews/:id	    -   Egy értékelés lekérése ID alapján
-PATCH	/api/reviews/:id	    -   Egy értékelés frissítése ID alapján
-DELETE	/api/reviews/:id	-   Egy értékelés törlése ID alapján
+GET     /api/reviews          -   Összes értékelés lekérése
+POST    /api/reviews          -   Új értékelés létrehozása
+GET     /api/reviews/:id      -   Egy értékelés lekérése ID alapján
+PATCH   /api/reviews/:id      -   Egy értékelés frissítése ID alapján
+DELETE  /api/reviews/:id      -   Egy értékelés törlése ID alapján
 
 
 

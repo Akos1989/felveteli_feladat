@@ -25,7 +25,7 @@ mongoose.connect(MONGOURL)
     })
 }).catch((error)=>console.log(error))
 
-app.use("/api/user", route)
-app.use('/api/books', bookRoutes);
+app.use("/api/", route)
+app.use("/api/books", bookRoutes);
 app.use("/api", reviewRoutes);
 app.use('/', swaggerRouter)

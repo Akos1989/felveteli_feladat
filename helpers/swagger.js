@@ -93,7 +93,21 @@ const swaggerOptions = {
           required: ['bookId', 'userId', 'reviewer', 'content', 'rating'],
         },
       },
+      
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT', 
+        },
+      },
     },
+    
+    security: [
+      {
+        bearerAuth: [],
+      },
+    ],
   },
   apis: ['./routes/*.js'], 
 };

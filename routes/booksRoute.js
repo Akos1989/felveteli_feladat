@@ -36,7 +36,7 @@ const route = express.Router()
  *       500:
  *         description: Server error
  */
-route.post("/create", createBook)
+route.post("/", createBook)
 
 /**
  * @swagger
@@ -56,7 +56,7 @@ route.post("/create", createBook)
  *       500:
  *         description: Server error
  */
-route.get("/getAllBooks", getAllBooks)
+route.get("/", getAllBooks)
 
 /**
  * @swagger
